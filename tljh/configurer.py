@@ -147,6 +147,10 @@ def update_user_environment(c, config):
 
 def update_user_account_config(c, config):
     c.SystemdSpawner.username_template = 'jupyter-{USERNAME}'
+#AF added latex path
+    c.SystemdSpawner.extra_paths = ['/usr/local/texlive/2018/bin/x86_64-linux/']
+    c.LatexConfig.latex_command = 'pdflatex'
+#AF end added latex path
 
 
 def _merge_dictionaries(a, b, path=None, update=True):
